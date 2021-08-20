@@ -42,6 +42,7 @@ function endTotal(inputValue) {
   }
 }
 
+// Main function
 function spaceCost(storageId, memory, deliveryCharge) {
     // declare and update constant value
     let spaceAmount = 0;
