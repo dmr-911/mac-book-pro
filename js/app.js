@@ -1,20 +1,20 @@
-function getExtraPrice(storageId, spaceAmount) {
-    // memory and storage amount
-    const extraSpacePrice = document.getElementById(storageId + '-extra-price');
-    const extraMemoryPriceAmount = 0 + parseFloat(spaceAmount);
-    extraSpacePrice.innerText = extraMemoryPriceAmount;
+function getExtraPrice(extraId, extraAmount) {
+    // memory, storage amount and delevery amount
+    const extraPrice = document.getElementById(extraId + '-extra-price');
+    const extraPriceAmount = parseFloat(extraAmount);
+    extraPrice.innerText = extraPriceAmount;
 }
 
 function totalPrice() {
   // Get all prices
-  const fixedPrice = document.getElementById("fixed-price").innerText;
+  const fixedPrice = document.getElementById('fixed-price').innerText;
   const extraMemoryPrice =
-    document.getElementById("memory-extra-price").innerText;
+    document.getElementById('memory-extra-price').innerText;
   const extraStoragePrice = document.getElementById("storage-extra-price").innerText;
   const deliveryCharge = document.getElementById("delivery-extra-price").innerText;
 
   // add all prices
-  const totalPrice = document.getElementById("total-price");
+  const totalPrice = document.getElementById('total-price');
   totalPrice.innerText =
     parseFloat(fixedPrice) +
     parseFloat(extraMemoryPrice) +
@@ -24,14 +24,13 @@ function totalPrice() {
 
 function endTotal(inputValue) {
   // get total price and put it on the footer total
-  const total = parseFloat(document.getElementById("total-price").innerText);
+  const total = parseFloat(document.getElementById('total-price').innerText);
   // get footer total
-  const endTotal = document.getElementById("end-total");
+  const endTotal = document.getElementById('end-total');
 
   // checking the input value and add the offer
-  if (inputValue == "stevekaku") {
+  if (inputValue == 'stevekaku') {
     const promo = parseFloat(total) / 5;
-    console.log(promo);
     endTotal.innerText = total - promo;
   } else {
     endTotal.innerText = total;
@@ -39,56 +38,53 @@ function endTotal(inputValue) {
 }
 
 // Main function
-function spaceCost(storageId, memory, deliveryCharge) {
+function extraCost(expenseId, memory, deliveryCharge) {
     // declare and update constant value
-    let spaceAmount = 0;
+    let extraAmount = 0;
     if (memory == 8 || memory == 256) {
-        spaceAmount = 0;
+        extraAmount = 0;
     }
     else if (deliveryCharge) {
-        spaceAmount = 20;
+        extraAmount = 20;
     }
     else if (memory == 512) {
-        spaceAmount = 100;
+        extraAmount = 100;
     }
     else if(memory == 16 || memory == 1){
-        spaceAmount = 180;
-    }
-    else {
-        spaceAmount = 0;
+        extraAmount = 180;
     }
 
     // call the functions
-    getExtraPrice(storageId, spaceAmount);
+    getExtraPrice(expenseId, extraAmount);
     totalPrice();
     endTotal();
 }
 
 // Extra Memory part
 document.getElementById('default-memory-amount').addEventListener('click', function () {
-    spaceCost('memory',8);
+    extraCost('memory',8);
 })
 document.getElementById('extra-memory-amount').addEventListener('click', function () {
-    spaceCost('memory', 16);
+    extraCost('memory', 16);
 })
 
 // Extra Storage part
 document.getElementById('default-storage-amount').addEventListener('click', function () {
-    spaceCost('storage', 256);
+    extraCost('storage', 256);
 })
 document.getElementById('extra-storage-amount').addEventListener("click", function () {
-    spaceCost("storage", 512);
+    extraCost('storage', 512);
 });
 document.getElementById('extra-large-storage-amount').addEventListener("click", function () {
-      spaceCost("storage", 1);
+      extraCost('storage', 1);
 });
 
 // Extra Delivery cost part
 document.getElementById('free-delivery').addEventListener('click', function () {
-    spaceCost('delivery', 0, false)
+    extraCost('delivery', 0, false)
 })
 document.getElementById('delivery-charge').addEventListener("click", function () {
-  spaceCost('delivery', 0, true);
+  extraCost('delivery', 0, true);
 });
 
 // Promo Button part
