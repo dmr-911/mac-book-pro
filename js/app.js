@@ -10,12 +10,8 @@ function totalPrice() {
   const fixedPrice = document.getElementById("fixed-price").innerText;
   const extraMemoryPrice =
     document.getElementById("memory-extra-price").innerText;
-  const extraStoragePrice = document.getElementById(
-    "storage-extra-price"
-  ).innerText;
-  const deliveryCharge = document.getElementById(
-    "delivery-extra-price"
-  ).innerText;
+  const extraStoragePrice = document.getElementById("storage-extra-price").innerText;
+  const deliveryCharge = document.getElementById("delivery-extra-price").innerText;
 
   // add all prices
   const totalPrice = document.getElementById("total-price");
