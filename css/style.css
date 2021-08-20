@@ -1,0 +1,8 @@
+/* memory items style  */
+.extras{
+   cursor: pointer;
+}
+.black-line{
+    height: 2px;
+    border: 2px solid black;
+}
