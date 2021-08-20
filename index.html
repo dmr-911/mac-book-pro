@@ -19,29 +19,38 @@
                     <img class="img-fluid" src="images/mac.png" alt="">
                 </div>
                 <div class="col-lg-6">
+                    <!-- Product details  -->
                     <div class="mb-4">
                         <h1>Customize Your Blue 24-inch iMac with Apple M1 chip.</h1>
                         <p>Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU , and 16-core Neutral Engine 8GB unified memory 256GB SSD storage Two Thunderbolt/ USB 4 pots and Magic Mouse Magic Keyboard- US English</p>
                     </div>
+
+                    <!-- Memory Part  -->
                     <div class="mb-4">
                             <h3>Memory</h3>
-                            <span class="d-inline-block border border-1 border-dark extras rounded p-2">8GB unified Memory</span>
-                            <span class="d-inline-block border border-1 border-dark extras rounded p-2">16GB unified Memory</span>
+                            <span id="default-memory-amount" class="d-inline-block border border-1 border-dark extras rounded p-2">8GB unified Memory</span>
+                            <span id="extra-memory-amount" class="d-inline-block border border-1 border-dark extras rounded p-2">16GB unified Memory</span>
                     </div>
+
+                    <!-- Storage Part -->
                     <div class="mb-4">
                             <h3>Storage</h3>
-                            <span class="d-inline-block border border-1 border-dark extras rounded p-2">256GB SSD storage</span>
-                            <span class="d-inline-block border border-1 border-dark extras rounded p-2">512GB SSD storage</span>
-                            <span class="d-inline-block border border-1 border-dark extras rounded p-2">1TB SSD storage</span>
+                            <span id="default-storage-amount" class="d-inline-block border border-1 border-dark extras rounded p-2">256GB SSD storage</span>
+                            <span id="extra-storage-amount" class="d-inline-block border border-1 border-dark extras rounded p-2">512GB SSD storage</span>
+                            <span id="extra-large-storage-amount" class="d-inline-block border border-1 border-dark extras rounded p-2">1TB SSD storage</span>
                     </div>
+
+                    <!-- Delivery Part -->
                     <div class="mb-4">
                             <h3>Choose your delivery option</h3>
-                            <span class="d-inline-block border border-1 border-dark extras rounded p-2">Friday, Aug 25 FREE Primary Delivery</span>
-                            <span class="d-inline-block border border-1 border-dark extras rounded p-2">Friday, Aug 21 Delivery Charge $20</span>
-                    </div>         
-                    <div class="my-4">
+                            <span id="free-delivery" class="d-inline-block border border-1 border-dark extras rounded p-2">Friday, Aug 25 FREE Primary Delivery</span>
+                            <span id="delivery-charge" class="d-inline-block border border-1 border-dark extras rounded p-2">Friday, Aug 21 Delivery Charge $20</span>
+                    </div>    
+                    
+                    <!-- Price Count Part -->
+                    <div class="my-5">
                         <div class="row g-0">
-                            <di class="col-lg-6">
+                            <di class="col-lg-5">
                                 <h5>Best Price</h5>
                                 <hr>
                                 <h5>Extra Memory Cost</h5>
@@ -52,30 +61,33 @@
                                 <p class="black-line w-100"></p>
                                 <h5>Total Price</h5>
                             </di g-0v>
-                            <div class="col-lg-6">
+                            <div class="col-lg-3 text-end">
                                 <h5>$<span id="fixed-price">1299</span></h5>
                                 <hr>
-                                <h5>$<span id="memory-price">0</span></h5>
+                                <h5>$<span id="memory-extra-price">0</span></h5>
                                 <hr>
-                                <h5>$<span id="storage-price">0</span></h5>
+                                <h5>$<span id="storage-extra-price">0</span></h5>
                                 <hr>
-                                <h5>$<span id="delivery-charge">0</span></h5>
+                                <h5>$<span id="delivery-extra-price">0</span></h5>
                                 <p class="black-line w-100"></p>
                                 <h5>$<span id="total-price">1299</span></h5>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Coupon Part -->
                     <div class="mb-4">
-                            <input type="text" class="d-inline-block form-control w-50 border border-1 border-dark">
-                            <button type="button" class="btn btn-danger mb-1">Apply</button>
+                            <input id="promo-code-input" type="text" class="d-inline-block form-control w-50 border border-1 border-dark">
+                            <button id="apply-button" type="button" class="btn btn-danger mb-1">Apply</button>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="container">
+
+        <footer class="container">
             <hr>
-            <h1 class="text-center">Total : $<span>1299</span></h1>
-        </section>
+            <h1 class="text-center">Total : $<span id="end-total">1299</span></h1>
+        </footer>
     </main>
 
     <!-- Bootstrap Bundle JS  -->
